@@ -4,7 +4,8 @@ module.exports = {
 	base: '/docs/',
 
 	themeConfig: {
-		sidebar: getSidebar()
+		sidebar: getSidebar(),
+		outlineTitle: 'На этой странице'
 	}
 }
 
