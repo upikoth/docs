@@ -4,18 +4,16 @@ module.exports = {
 	base: '/docs/',
 
 	themeConfig: {
-		sidebar: {
-			'/': getSidebar()
-		}
+		sidebar: getSidebar()
 	}
 }
 
 function getSidebar() {
 	return [
 		{
-			text: 'Пункт меню',
-			children: [
-				{ text: 'Подпункт меню', link: '/menu/child' },
+			text: 'Фронтенд',
+			items: [
+				{ text: 'Создание документации', link: '/frontend/documentation' },
 			],
 		},
 	]
