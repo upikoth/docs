@@ -1,6 +1,7 @@
 module.exports = {
 	title: 'Документация',
 	lang: 'ru',
+	base: '/docs/',
 
 	themeConfig: {
 		sidebar: {
