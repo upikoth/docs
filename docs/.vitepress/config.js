@@ -17,5 +17,12 @@ function getSidebar() {
 				{ text: 'Создание документации', link: '/frontend/documentation' },
 			],
 		},
+		{
+			text: 'CI/CD',
+			items: [
+				{ text: 'Настройка сервера', link: '/ci-cd/server' },
+				{ text: 'Настройка Nginx', link: '/ci-cd/nginx' },
+			],
+		},
 	]
 }
