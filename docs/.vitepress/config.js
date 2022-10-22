@@ -15,6 +15,9 @@ function getSidebar() {
 			text: 'Фронтенд',
 			items: [
 				{ text: 'Создание документации', link: '/frontend/documentation' },
+				{ text: 'Quassar', items: [
+					{ text: 'Разработка под android', link: '/frontend/quasar/android' },
+				] },
 			],
 		},
 		{
