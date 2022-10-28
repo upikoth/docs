@@ -18,7 +18,7 @@ service nginx restart
 nginx -t
 ```
 
-Простейший конфиг для раздачи статики из /var/www/vue-example с помощью nginx
+Простейший конфиг для раздачи статики из /var/www/vue-example с помощью nginx и проксирования запросов начинающихся с /api/ на порт 3000.
 
 ```nginx
 events {}
@@ -30,6 +30,10 @@ http {
     listen 80;
     server_name 185.46.11.17;
     root /var/www/vue-example;
+
+    location ~ ^/api/.*$ {
+      proxy_pass http://127.0.0.1:3000;
+    }
   }
 }
 ```
