@@ -1,3 +1,3 @@
-<script setup>
-	document.location.href = '/docs/frontend/documentation.html'
-</script>
+# Проекты - стартеры
+
+[Backend на Go](https://github.com/upikoth/project-starter-backend)
