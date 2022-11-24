@@ -1,1 +1,0 @@
-import{o as e,c as t}from"./app.7d5bec28.js";const s=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md"}'),a={name:"index.md"},d=Object.assign(a,{setup(n){return document.location.href="/docs/frontend/documentation.html",(o,c)=>(e(),t("div"))}});export{s as __pageData,d as default};
