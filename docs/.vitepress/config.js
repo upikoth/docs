@@ -28,7 +28,21 @@ function getSidebar() {
     },
     {
       text: "Backend",
-      items: [{ text: "Go", link: "/backend/go" }],
+      items: [
+        {
+          text: "Go",
+          items: [
+            {
+              text: "Полезные материалы",
+              link: "/backend/go/sources",
+            },
+            {
+              text: "Debugging Vscode",
+              link: "/backend/go/debugging-vscode",
+            },
+          ],
+        },
+      ],
     },
     {
       text: "Database",
@@ -48,7 +62,8 @@ function getSidebar() {
       text: "CI/CD",
       items: [
         { text: "Настройка сервера", link: "/ci-cd/server" },
-        { text: "Настройка Nginx", link: "/ci-cd/nginx" },
+        { text: "Настройка Nginx Ubuntu", link: "/ci-cd/nginx-ubuntu" },
+        { text: "Настройка Nginx mac", link: "/ci-cd/nginx-mac" },
       ],
     },
     {

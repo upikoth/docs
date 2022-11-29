@@ -1,4 +1,4 @@
-# Go
+# Полезные материалы
 
 [Ссылка на layout проекта на go](https://github.com/golang-standards/project-layout/blob/master/README_ru.md)
 
