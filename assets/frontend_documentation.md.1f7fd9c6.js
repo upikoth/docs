@@ -37,7 +37,7 @@ import{_ as s,c as n,o as a,d as l}from"./app.8b576cc8.js";const F=JSON.parse('{
 <span class="line"><span style="color:#C3E88D;">	return [</span></span>
 <span class="line"><span style="color:#C3E88D;">		{</span></span>
 <span class="line"><span style="color:#C3E88D;">			text: &#39;\u041F\u0443\u043D\u043A\u0442 \u043C\u0435\u043D\u044E&#39;,</span></span>
-<span class="line"><span style="color:#C3E88D;">			children: [</span></span>
+<span class="line"><span style="color:#C3E88D;">			items: [</span></span>
 <span class="line"><span style="color:#C3E88D;">				{ text: &#39;\u041F\u043E\u0434\u043F\u0443\u043D\u043A\u0442 \u043C\u0435\u043D\u044E&#39;, link: &#39;/menu/child&#39; },</span></span>
 <span class="line"><span style="color:#C3E88D;">			],</span></span>
 <span class="line"><span style="color:#C3E88D;">		},</span></span>
