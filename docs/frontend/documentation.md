@@ -44,7 +44,7 @@ function getSidebar() {
 	return [
 		{
 			text: 'Пункт меню',
-			children: [
+			items: [
 				{ text: 'Подпункт меню', link: '/menu/child' },
 			],
 		},
