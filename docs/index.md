@@ -4,6 +4,10 @@
 
 [Frontend на Vue3 + Quasar](https://github.com/upikoth/project-starter-frontend)
 
+[Документания для пользователя](https://github.com/upikoth/project-starter-user-documentation)
+
+[Техническая документация](https://github.com/upikoth/project-starter-technical-documentation)
+
 ## Текущее состояние проектов
 
 Backend на Go:
@@ -16,7 +20,7 @@ Frontend на Vue3 + Quasar:
 
 + Инициализирован проект
 + Доработана аутентификация пользователя
-+ Сделаны отдельные проекты для пользовательской и технической документации, интегрированы в ЛК
++ Сделаны отдельные проекты для пользовательской и технической документации, интегрированы в ЛК с помощью iframe
 
 ## Дальнейшие планы на проекты
 
