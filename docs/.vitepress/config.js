@@ -84,5 +84,14 @@ function getSidebar() {
         },
       ],
     },
+    {
+      text: "Time management",
+      items: [
+        {
+          text: "Логирование времени",
+          link: "/time-management/tracking",
+        },
+      ],
+    },
   ];
 }
