@@ -1,95 +1,109 @@
 module.exports = {
-  title: "Документация",
-  lang: "ru",
-  base: "/docs/",
+  title: 'Документация',
+  lang: 'ru',
+  base: '/docs/',
 
   themeConfig: {
     sidebar: getSidebar(),
-    outlineTitle: "На этой странице",
+    outlineTitle: 'На этой странице',
   },
 };
 
 function getSidebar() {
   return [
     {
-      text: "Product",
-      items: [{ text: "Шаги создания приложения", link: "/product/steps" }],
+      text: 'Product',
+      items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
     },
     {
-      text: "Frontend",
+      text: 'Frontend',
       items: [
-        { text: "Создание документации", link: "/frontend/documentation" },
+        { text: 'Создание документации', link: '/frontend/documentation' },
         {
-          text: "Quassar",
+          text: 'Quassar',
           items: [
             {
-              text: "Разработка под android",
-              link: "/frontend/quasar/android",
+              text: 'Разработка под android',
+              link: '/frontend/quasar/android',
             },
           ],
         },
       ],
     },
     {
-      text: "Backend",
+      text: 'Backend',
       items: [
         {
-          text: "Go",
+          text: 'Go',
           items: [
             {
-              text: "Полезные материалы",
-              link: "/backend/go/sources",
+              text: 'Полезные материалы',
+              link: '/backend/go/sources',
             },
             {
-              text: "Debugging Vscode",
-              link: "/backend/go/debugging-vscode",
+              text: 'Debugging Vscode',
+              link: '/backend/go/debugging-vscode',
             },
           ],
         },
       ],
     },
     {
-      text: "Database",
+      text: 'Database',
       items: [
         {
-          text: "Postgres",
+          text: 'Postgres',
           items: [
             {
-              text: "Работа из командной строки",
-              link: "/database/postgres/terminal",
+              text: 'Работа из командной строки',
+              link: '/database/postgres/terminal',
             },
           ],
         },
       ],
     },
     {
-      text: "CI/CD",
+      text: 'CI/CD',
       items: [
-        { text: "Настройка сервера", link: "/ci-cd/server" },
-        { text: "Настройка Nginx Ubuntu", link: "/ci-cd/nginx-ubuntu" },
-        { text: "Настройка Nginx mac", link: "/ci-cd/nginx-mac" },
+        { text: 'Настройка сервера', link: '/ci-cd/server' },
+        { text: 'Настройка Nginx Ubuntu', link: '/ci-cd/nginx-ubuntu' },
+        { text: 'Настройка Nginx mac', link: '/ci-cd/nginx-mac' },
       ],
     },
     {
-      text: "Testing",
+      text: 'Testing',
       items: [
         {
-          text: "Frontend",
+          text: 'Frontend',
           items: [
             {
-              text: "Подходы к тестированию",
-              link: "/testing/frontend/methods",
+              text: 'Подходы к тестированию',
+              link: '/testing/frontend/methods',
             },
           ],
         },
       ],
     },
     {
-      text: "Time management",
+      text: 'Design',
       items: [
         {
-          text: "Логирование времени",
-          link: "/time-management/tracking",
+          text: 'Ui kit',
+          items: [
+            {
+              text: 'Шаги по созданию Ui kit',
+              link: '/design/ui-kit/flow',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      text: 'Не совсем про код',
+      items: [
+        {
+          text: 'Логирование времени',
+          link: '/other/tracking',
         },
       ],
     },
