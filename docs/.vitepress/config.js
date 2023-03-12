@@ -111,8 +111,16 @@ function getSidebar() {
       text: 'Не совсем про код',
       items: [
         {
+          text: 'Развитие',
+          link: '/other/development',
+        },
+        {
           text: 'Логирование времени',
           link: '/other/tracking',
+        },
+        {
+          text: 'Планирование',
+          link: '/other/planning',
         },
       ],
     },
