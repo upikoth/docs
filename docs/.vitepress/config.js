@@ -28,6 +28,7 @@ function getSidebar() {
             },
           ],
         },
+        { text: 'Собеседование', link: '/frontend/interview' },
       ],
     },
     {
@@ -121,6 +122,15 @@ function getSidebar() {
         {
           text: 'Планирование',
           link: '/other/planning',
+        },
+      ],
+    },
+    {
+      text: 'Проекты',
+      items: [
+        {
+          text: 'Стартеры',
+          link: '/projects/starters',
         },
       ],
     },
