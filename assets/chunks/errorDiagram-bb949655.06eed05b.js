@@ -1,1 +1,0 @@
-import{aC as r}from"../index.md.4c0a8efe.js";import"../app.e412a664.js";const e=()=>"",s=e,o={db:{clear:()=>{}},styles:s,renderer:r,parser:{parser:{yy:{}},parse:()=>{}},init:()=>{}};export{o as diagram};
