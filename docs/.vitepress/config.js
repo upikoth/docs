@@ -12,6 +12,10 @@ module.exports = {
 function getSidebar() {
   return [
     {
+      text: 'Соглашения',
+      items: [{ text: 'Git', link: '/agreements/git' }],
+    },
+    {
       text: 'Product',
       items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
     },
