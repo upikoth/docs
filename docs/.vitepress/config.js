@@ -6,6 +6,10 @@ module.exports = {
   themeConfig: {
     sidebar: getSidebar(),
     outlineTitle: 'На этой странице',
+    docFooter: {
+      prev: 'Предыдущая страница',
+      next: 'Следующая страница',
+    },
   },
 };
 
@@ -41,6 +45,10 @@ function getSidebar() {
         {
           text: 'Go',
           items: [
+            {
+              text: 'Общая информация',
+              link: '/backend/go/common',
+            },
             {
               text: 'Полезные материалы',
               link: '/backend/go/sources',
