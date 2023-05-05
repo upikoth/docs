@@ -17,6 +17,7 @@ psql
 CREATE DATABASE yourdbname;
 CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
 GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
+GRANT ALL PRIVILEGES ON SCHEMA schema_name TO role_name;
 
 Использование миграций
 
