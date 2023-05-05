@@ -2,9 +2,21 @@
 
 Установка postgres
 
+с оф сайта
+
 Создание и запуск сервера
 
+systemctl start postgresql
+systemctl stop postgresql
+
+su postgres
+psql
+
 Создание базы данных
+
+CREATE DATABASE yourdbname;
+CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
+GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
 
 Использование миграций
 

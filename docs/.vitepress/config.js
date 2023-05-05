@@ -81,6 +81,7 @@ function getSidebar() {
         { text: 'Настройка сервера', link: '/ci-cd/server' },
         { text: 'Настройка Nginx Ubuntu', link: '/ci-cd/nginx-ubuntu' },
         { text: 'Настройка Nginx mac', link: '/ci-cd/nginx-mac' },
+        { text: 'SSL сертификат', link: '/ci-cd/ssl' },
       ],
     },
     {
