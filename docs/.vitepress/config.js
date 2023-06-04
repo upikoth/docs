@@ -16,6 +16,15 @@ module.exports = {
 function getSidebar() {
   return [
     {
+      text: 'Проекты',
+      items: [
+        {
+          text: 'Starter',
+          link: '/projects/starter',
+        },
+      ],
+    },
+    {
       text: 'Соглашения',
       items: [{ text: 'Git', link: '/agreements/git' }],
     },
@@ -135,15 +144,6 @@ function getSidebar() {
         {
           text: 'Планирование',
           link: '/other/planning',
-        },
-      ],
-    },
-    {
-      text: 'Проекты',
-      items: [
-        {
-          text: 'Стартеры',
-          link: '/projects/starters',
         },
       ],
     },
