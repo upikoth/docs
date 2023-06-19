@@ -20,7 +20,33 @@ function getSidebar() {
       items: [
         {
           text: 'Starter',
-          link: '/projects/starter',
+          link: '/projects/starter/intro',
+          items: [
+            {
+              text: 'Бизнес логика',
+              link: '/projects/starter/logic',
+            },
+            {
+              text: 'Db schema',
+              link: '/projects/starter/schema',
+            },
+            {
+              text: 'Backend',
+              link: '/projects/starter/backend',
+            },
+            {
+              text: 'Frontend',
+              link: '/projects/starter/frontend',
+            },
+            {
+              text: 'CI/CD',
+              link: '/projects/starter/ci-cd',
+            },
+            {
+              text: 'Как создать новый проект',
+              link: '/projects/starter/initialization',
+            },
+          ],
         },
       ],
     },
