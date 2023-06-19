@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as e}from"./app.17f2b53f.js";const C=JSON.parse('{"title":"SSL","description":"","frontmatter":{},"headers":[],"relativePath":"ci-cd/ssl.md"}'),t={name:"ci-cd/ssl.md"},l=e("",3),p=[l];function o(c,i,r,d,_,h){return n(),a("div",null,p)}const g=s(t,[["render",o]]);export{C as __pageData,g as default};
