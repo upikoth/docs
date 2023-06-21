@@ -39,7 +39,7 @@ function getSidebar() {
               link: '/projects/starter/frontend',
             },
             {
-              text: 'CI/CD',
+              text: 'CI/CD и окружения',
               link: '/projects/starter/ci-cd',
             },
             {

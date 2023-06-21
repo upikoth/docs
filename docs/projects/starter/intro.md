@@ -9,7 +9,7 @@
 
 ## Стек
 
-+ Frontend: Vue3 + Ionic framework
++ Frontend: Vue3 + Quasar
 + Backend: Go + Postgres
 
 ## Task manager
