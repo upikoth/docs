@@ -27,8 +27,8 @@ function getSidebar() {
               link: '/projects/starter/logic',
             },
             {
-              text: 'Db schema',
-              link: '/projects/starter/schema',
+              text: 'Database',
+              link: '/projects/starter/database',
             },
             {
               text: 'Backend',
