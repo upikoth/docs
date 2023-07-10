@@ -19,6 +19,10 @@ function getSidebar() {
       text: 'Проекты',
       items: [
         {
+          text: 'Leaders2023',
+          link: '/projects/leaders2023/intro',
+        },
+        {
           text: 'Starter',
           link: '/projects/starter/intro',
           items: [
