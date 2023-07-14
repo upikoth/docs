@@ -55,6 +55,10 @@ function getSidebar() {
       ],
     },
     {
+      text: 'Инструменты',
+      items: [{ text: 'Sentry', link: '/tools/sentry' }],
+    },
+    {
       text: 'Соглашения',
       items: [{ text: 'Git', link: '/agreements/git' }],
     },
@@ -117,6 +121,7 @@ function getSidebar() {
     {
       text: 'CI/CD',
       items: [
+        { text: 'Docker', link: '/ci-cd/docker/intro' },
         { text: 'Настройка сервера', link: '/ci-cd/server' },
         { text: 'Настройка Nginx Ubuntu', link: '/ci-cd/nginx-ubuntu' },
         { text: 'Настройка Nginx mac', link: '/ci-cd/nginx-mac' },

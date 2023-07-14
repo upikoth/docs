@@ -20,3 +20,7 @@
 
 - Frontend: https://github.com/upikoth/starter-vue3
 - Backend: https://github.com/upikoth/starter-go
+
+## Логирование
+
+- Backend все логи от уровня Warning логируются в [Sentry](https://upikoth.sentry.io/projects/starter-go/?project=4505510604439552)
