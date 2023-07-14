@@ -1,9 +1,0 @@
-import{_ as s,c as n,o as a,a as e}from"./app.a49b7fe7.js";const C=JSON.parse('{"title":"SSL","description":"","frontmatter":{},"headers":[],"relativePath":"ci-cd/ssl.md"}'),t={name:"ci-cd/ssl.md"},l=e(`<h1 id="ssl" tabindex="-1">SSL <a class="header-anchor" href="#ssl" aria-hidden="true">#</a></h1><div class="language-sh"><button title="Copy Code" class="copy"></button><span class="lang">sh</span><pre><code><span class="line"><span style="color:#676E95;"># \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u043C Certbot</span></span>
-<span class="line"><span style="color:#A6ACCD;">sudo apt install -yq certbot</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#676E95;"># \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u043C \u043F\u043B\u0430\u0433\u0438\u043D \u0434\u043B\u044F nginx</span></span>
-<span class="line"><span style="color:#A6ACCD;">apt-get install python3-certbot-nginx</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#676E95;"># \u0433\u0435\u043D\u0435\u0440\u0438\u0440\u0443\u0435\u043C/\u043E\u0431\u043D\u043E\u0432\u043B\u044F\u0435\u043C \u0441\u0435\u0440\u0442\u0438\u0444\u0438\u043A\u0430\u0442</span></span>
-<span class="line"><span style="color:#A6ACCD;">sudo certbot --nginx -d upikoth.dev</span></span>
-<span class="line"></span></code></pre></div><p>\u043A\u043E\u043D\u0444\u0438\u0433 nginx \u0431\u0443\u0434\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D \u0438 nginx \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0449\u0435\u043D</p>`,3),p=[l];function o(c,i,r,d,_,h){return a(),n("div",null,p)}const g=s(t,[["render",o]]);export{C as __pageData,g as default};
