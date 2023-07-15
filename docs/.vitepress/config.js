@@ -111,7 +111,11 @@ function getSidebar() {
           text: 'Postgres',
           items: [
             {
-              text: 'Работа из командной строки',
+              text: 'Docker',
+              link: '/database/postgres/docker',
+            },
+            {
+              text: 'CLI',
               link: '/database/postgres/terminal',
             },
           ],
