@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and deploy
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,15 +24,31 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: docs/.vitepress/dist
+
+  deploy-to-github-pages:
+    name: Deploy to Github Pages
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+          publish_dir: dist
 
       - name: Deploy Server
         uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - run: rsync -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" --delete -r ./docs/.vitepress/dist/ root@${{ secrets.SSH_HOST }}:${{ vars.APP_SERVER_PATH }}
+      - run: rsync -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" --delete -r ./dist root@${{ secrets.SSH_HOST }}:${{ vars.APP_SERVER_PATH }}
