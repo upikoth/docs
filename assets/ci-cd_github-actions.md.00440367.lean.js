@@ -1,0 +1,1 @@
+import{_ as t,c as e,o,a as i}from"./app.69d9c8b2.js";const f=JSON.parse('{"title":"Github Actions","description":"","frontmatter":{},"headers":[],"relativePath":"ci-cd/github-actions.md"}'),a={name:"ci-cd/github-actions.md"},s=i("",8),n=[s];function c(r,_,p,h,l,d){return o(),e("div",null,n)}const b=t(a,[["render",c]]);export{f as __pageData,b as default};
