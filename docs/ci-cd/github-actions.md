@@ -13,3 +13,6 @@ Event: Создание issue.
 Worflow:
 - action: Label
 - action: Assign
+
+## Примеры улучшения Workflow
+
