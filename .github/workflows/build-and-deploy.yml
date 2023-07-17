@@ -39,6 +39,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
+          path: dist
 
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -46,7 +47,18 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
 
-      - name: Deploy Server
+  deploy-to-server:
+    name: Deploy to Server
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: dist
+
+      - name: Deploy to Server
         uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
