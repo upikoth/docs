@@ -63,6 +63,10 @@ function getSidebar() {
       items: [{ text: 'Git', link: '/agreements/git' }],
     },
     {
+      text: 'Архитектура',
+      items: [{ text: 'System design', link: '/architecture/system-design' }],
+    },
+    {
       text: 'Product',
       items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
     },
@@ -129,6 +133,7 @@ function getSidebar() {
         { text: 'Docker', link: '/ci-cd/docker/intro' },
         { text: 'Nginx', link: '/ci-cd/nginx' },
         { text: 'SSL сертификат', link: '/ci-cd/ssl' },
+        { text: 'Github Actions', link: '/ci-cd/github-actions' },
       ],
     },
     {
