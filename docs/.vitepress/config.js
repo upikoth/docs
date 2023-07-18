@@ -1,7 +1,11 @@
+const base =
+  process.argv.find((el) => el.startsWith('base='))?.replace(/^base=/, '') ||
+  '/';
+
 module.exports = {
   title: 'Документация',
   lang: 'ru',
-  base: '/docs/',
+  base,
 
   themeConfig: {
     sidebar: getSidebar(),

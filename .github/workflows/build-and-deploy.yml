@@ -5,9 +5,13 @@ on:
     branches:
       - main
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
-  build:
-    name: Build
+  deploy-to-github-pages:
+    name: Build and deploy to Github Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -36,45 +40,41 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifacts
-          path: docs/.vitepress/dist
-
-  deploy-to-github-pages:
-    name: Deploy to Github Pages
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-          path: dist
+        run: npm run build:gh-pages
 
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: ./docs/.vitepress/dist
 
-  deploy-to-server:
-    name: Deploy to Server
-    needs: build
+  build-and-push-image:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
     steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-          path: dist
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Deploy to Server
-        uses: webfactory/ssh-agent@v0.7.0
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: rsync -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" --delete -r ./dist/ root@${{ secrets.SSH_HOST }}:${{ vars.APP_SERVER_PATH }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

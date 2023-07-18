@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
+    "build:gh-pages": "vitepress build docs base=/docs/",
     "serve": "vitepress serve docs"
   },
   "keywords": [],
