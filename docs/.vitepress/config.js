@@ -77,6 +77,7 @@ function getSidebar() {
     {
       text: 'Frontend',
       items: [
+        { text: 'Груминг', link: '/frontend/grooming' },
         { text: 'Создание документации', link: '/frontend/documentation' },
         {
           text: 'Quassar',
