@@ -87,3 +87,74 @@ docker --help поможет в остальном
 
 1. Выбрать подходящий базовый образ. Возможно подойдет alpine
 2. Использовать многоступенчатую сборку приложения
+
+Пример:
+
+```docker
+# Stage 1. Build.
+
+FROM node:16-alpine as build
+
+WORKDIR /documentation
+
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+COPY . ./
+
+RUN npm run build
+
+# Stage 2.
+
+FROM nginx:1.25-alpine-slim
+
+COPY --from=build /documentation/docs/.vitepress/dist/ /usr/share/nginx/html/
+
+EXPOSE 80
+```
+
+## Docker compose
+
+- Создаем docker-compose.yml
+
+```bash
+docker compose up -d
+# Запуск только одного сервиса с зависимостями.
+docker compose up -d service-name
+# Запуск сервиса без зависимостей.
+docker compose up --no-deps -d service-name
+```
+
+## Deploy c Docker compose
+
+```yaml
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v3
+
+  - name: Log in to the Container registry
+    uses: docker/login-action@v2
+    with:
+      registry: ${{ env.REGISTRY }}
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
+
+  - name: Setup docker context
+    run: |
+      mkdir -p ~/.ssh
+      touch ~/.ssh/known_hosts
+      echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+      chmod 0400 ~/.ssh/id_rsa
+      ssh-keyscan -t rsa  ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      docker context create remote --docker "host=ssh://${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PORT }}"
+      docker context use remote
+
+  - name: Deploy
+    run: |
+			echo "" > .env
+      docker compose stop backend
+      docker compose pull backend
+      docker compose up --no-deps -d backend
+      docker system prune -f
+```
