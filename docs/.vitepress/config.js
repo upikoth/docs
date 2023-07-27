@@ -96,20 +96,7 @@ function getSidebar() {
       items: [
         {
           text: 'Go',
-          items: [
-            {
-              text: 'Общая информация',
-              link: '/backend/go/common',
-            },
-            {
-              text: 'Полезные материалы',
-              link: '/backend/go/sources',
-            },
-            {
-              text: 'Debugging Vscode',
-              link: '/backend/go/debugging-vscode',
-            },
-          ],
+          link: '/backend/go',
         },
       ],
     },

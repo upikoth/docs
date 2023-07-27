@@ -53,3 +53,13 @@ brew upgrade
 
 brew install nginx
 ```
+
+Запуск nginx и другие основные команды:
+
+```shell
+nginx -t
+
+brew services restart nginx
+brew services stop nginx
+brew services start nginx
+```
