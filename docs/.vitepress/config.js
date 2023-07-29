@@ -66,10 +66,10 @@ function getSidebar() {
       text: 'Соглашения',
       items: [{ text: 'Git', link: '/agreements/git' }],
     },
-    {
-      text: 'Архитектура',
-      items: [{ text: 'System design', link: '/architecture/system-design' }],
-    },
+    // {
+    //   text: 'Архитектура',
+    //   items: [{ text: 'System design', link: '/architecture/system-design' }],
+    // },
     {
       text: 'Product',
       items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
@@ -88,18 +88,18 @@ function getSidebar() {
             },
           ],
         },
-        { text: 'Собеседование', link: '/frontend/interview' },
+        // { text: 'Собеседование', link: '/frontend/interview' },
       ],
     },
-    {
-      text: 'Backend',
-      items: [
-        {
-          text: 'Go',
-          link: '/backend/go',
-        },
-      ],
-    },
+    // {
+    //   text: 'Backend',
+    //   items: [
+    //     {
+    //       text: 'Go',
+    //       link: '/backend/go',
+    //     },
+    //   ],
+    // },
     {
       text: 'Database',
       items: [
@@ -151,36 +151,36 @@ function getSidebar() {
         // },
       ],
     },
-    {
-      text: 'Design',
-      items: [
-        {
-          text: 'Ui kit',
-          items: [
-            {
-              text: 'Шаги по созданию Ui kit',
-              link: '/design/ui-kit/flow',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      text: 'Не совсем про код',
-      items: [
-        {
-          text: 'Развитие',
-          link: '/other/development',
-        },
-        {
-          text: 'Логирование времени',
-          link: '/other/tracking',
-        },
-        {
-          text: 'Планирование',
-          link: '/other/planning',
-        },
-      ],
-    },
+    // {
+    //   text: 'Design',
+    //   items: [
+    //     {
+    //       text: 'Ui kit',
+    //       items: [
+    //         {
+    //           text: 'Шаги по созданию Ui kit',
+    //           link: '/design/ui-kit/flow',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+    // {
+    //   text: 'Не совсем про код',
+    //   items: [
+    //     {
+    //       text: 'Развитие',
+    //       link: '/other/development',
+    //     },
+    //     {
+    //       text: 'Логирование времени',
+    //       link: '/other/tracking',
+    //     },
+    //     {
+    //       text: 'Планирование',
+    //       link: '/other/planning',
+    //     },
+    //   ],
+    // },
   ];
 }
