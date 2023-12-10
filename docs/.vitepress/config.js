@@ -58,10 +58,10 @@ function getSidebar() {
         },
       ],
     },
-    {
-      text: 'Инструменты',
-      items: [{ text: 'Sentry', link: '/tools/sentry' }],
-    },
+    // {
+    //   text: 'Инструменты',
+    //   items: [{ text: 'Sentry', link: '/tools/sentry' }],
+    // },
     {
       text: 'Соглашения',
       items: [{ text: 'Git', link: '/agreements/git' }],
