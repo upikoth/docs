@@ -11,25 +11,13 @@
 
 ![backend-clean-arch](./backend-clean-arch.png)
 
-### `/scripts`
-
-Содержит основные команды, операции над приложением. Создан, чтобы Makefile был простым и понятным
-
-### `/migrations`
+### `/internal/repository/sqlite/migrations`
 
 Миграции для БД
 
-### `/docs`
-
-Автоматически генерируемое описание API с помощью swagger
-
-### `/cmd`
+### `/index.ts`
 
 Содержит точки входа в приложение
-
-### `/internal`
-
-Основная логика приложения
 
 ### `/internal/app`
 
@@ -88,8 +76,7 @@
 	"success": false,
 	"error": {
 		"code": "",
-		"codeDescription": "",
-		"details": ""
+		"description": "",
 	}
 }
 ```
