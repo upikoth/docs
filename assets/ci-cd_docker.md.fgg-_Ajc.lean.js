@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n}from"./chunks/framework.mxDuve1e.js";const g=JSON.parse('{"title":"Docker","description":"","frontmatter":{},"headers":[],"relativePath":"ci-cd/docker.md","filePath":"ci-cd/docker.md"}'),l={name:"ci-cd/docker.md"},p=n("",33),e=[p];function h(k,t,r,d,c,o){return a(),i("div",null,e)}const y=s(l,[["render",h]]);export{g as __pageData,y as default};
