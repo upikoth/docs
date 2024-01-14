@@ -4,9 +4,9 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 
 # Upikoth.dev
 
-- [upikoth.dev](upikoth.dev) - документация
-- [starter.upikoth.dev](starter.upikoth.dev) - проект starter
-- [leaders2023.upikoth.dev](leaders2023.upikoth.dev) - проект leaders2023
+- [upikoth.dev](https://upikoth.dev) - документация
+- [starter.upikoth.dev](https://starter.upikoth.dev) - проект starter
+- [leaders2023.upikoth.dev](https://leaders2023.upikoth.dev) - проект leaders2023
 
 Все проекты размещены на этом домене или его поддоменах
 
