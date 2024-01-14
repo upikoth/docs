@@ -23,7 +23,11 @@ export default {
 			theme: 'dark'
 		});
 
-		mermaid.init()
+		mermaid
+			.init()
+			.finally(() => {
+				this.updateTheme()
+			})
 
 		this.switchButton = document.querySelector('.VPSwitch')
 		this.subscribeSwichEvent()

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "build:gh-pages": "vitepress build docs base=/docs/",
@@ -14,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.21"
+    "vitepress": "^1.0.0-rc.36"
   },
   "dependencies": {
-    "mermaid": "^10.0.2"
+    "mermaid": "^10.6.1"
   }
 }

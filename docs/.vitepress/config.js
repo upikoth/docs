@@ -23,6 +23,10 @@ function getSidebar() {
       text: 'Проекты',
       items: [
         {
+          text: 'Upikoth.dev',
+          link: '/projects/upikoth-dev/intro',
+        },
+        {
           text: 'Leaders2023',
           link: '/projects/leaders2023/intro',
         },
