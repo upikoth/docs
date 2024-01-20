@@ -22,4 +22,8 @@
 
 ## Логирование
 
-- (starter-bun): логи будут храниться в файлах, рядом с проектом
+- (starter-bun): логи будут храниться в файлах, рядом с проектом. Также есть volume на сервер /var/www/logs/starter-bun
+
+## Полезные ссылки по проекту
+
+[Sentry starter-vue3](https://upikoth.sentry.io/projects/starter-vue3/?project=4505991751598080)

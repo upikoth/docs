@@ -1,5 +1,7 @@
 # Database
 
+БД через volume есть на сервере /var/www/databases/starter-bun-database.sqlite
+
 ## Как получить визуальное отображение схемы таблицы:
 
 + sqlite3 'database.sqlite' .schema > out.sql

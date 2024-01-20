@@ -37,7 +37,7 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 					name - frontend]
 			id11[.../api
 					Docker container
-					127.0.0.1:8080,
+					127.0.0.1:8000,
 					name - backend]
 			id1 --> id6
 			id6 --> id2
@@ -49,6 +49,9 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 			id4 --> id5
 			id4 --> id10
 			id4 --> id11
+			subgraph документация
+			id5
+			end
 			subgraph starter.upikoth.dev
 			id10
 			id11

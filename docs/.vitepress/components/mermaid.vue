@@ -56,7 +56,7 @@ export default {
 
 		getCurrentTheme() {
 			const attributeValue = this.switchButton.getAttribute('aria-checked')
-			return attributeValue === 'true' ? 'dark' : 'default'
+			return attributeValue === 'false' ? 'default' : 'dark'
 		}
 	}
 };
