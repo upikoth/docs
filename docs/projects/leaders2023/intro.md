@@ -11,8 +11,8 @@
 
 ## Превью
 
-- Приложение: https://leaders2023.upikoth.dev/
-- API: https://leaders2023.upikoth.dev/api/swagger/index.html
+- Приложение: http://178.170.196.94
+- API: http://178.170.196.94/api/swagger/index.html
 
 Авторизация. Телефоны для разных ролей:
 
