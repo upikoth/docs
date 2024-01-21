@@ -1,5 +1,8 @@
 # CI/CD и окружения
 
++ [Grafana с информацией о хосте, на котором запущен проект](https://upikoth.grafana.net/d/nodes/main-server-overview)
++ [Grafana с информацией о docker контейнерах](https://upikoth.grafana.net/d/integration-docker-overview/main-docker-overview)
+
 ## Dev
 
 При разработке все сервисы работают локально.

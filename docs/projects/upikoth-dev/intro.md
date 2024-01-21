@@ -12,6 +12,12 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 
 Все проекты размещены на одном VPS сервере: main - 87.242.121.175
 
+## Действия, которые сделаны на VPS после его аренды:
+
+- установка docker
+- установка portainer
+- установка grafana-agent
+
 <mermaid>
 	<pre class='.mermaid'>
 		flowchart

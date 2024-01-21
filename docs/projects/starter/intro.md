@@ -26,4 +26,7 @@
 
 ## Полезные ссылки по проекту
 
-[Sentry starter-vue3](https://upikoth.sentry.io/projects/starter-vue3/?project=4505991751598080)
++ [Sentry starter-vue3](https://upikoth.sentry.io/projects/starter-vue3/?project=4505991751598080)
++ [Яндекс метрика](https://metrika.yandex.ru/dashboard?group=day&period=week&id=96194800)
++ [Grafana с информацией о хосте, на котором запущен проект](https://upikoth.grafana.net/d/nodes/main-server-overview)
++ [Grafana с информацией о docker контейнерах](https://upikoth.grafana.net/d/integration-docker-overview/main-docker-overview)
