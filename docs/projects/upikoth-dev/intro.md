@@ -14,6 +14,7 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 
 ## Действия, которые сделаны на VPS после его аренды:
 
+- настройка nginx
 - установка docker
 - установка portainer
 - установка grafana-agent

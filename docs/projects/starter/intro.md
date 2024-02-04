@@ -10,6 +10,7 @@
 
 + Frontend: Vue3 + Quasar
 + Backend: Bun + sqlite
++ S3 - object storage service - cloud.ru
 
 ## Task manager
 
