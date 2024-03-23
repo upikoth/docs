@@ -93,6 +93,7 @@ function getSidebar() {
           ],
         },
         // { text: 'Собеседование', link: '/frontend/interview' },
+        { text: 'Анализ бандла', link: '/frontend/bundle-analysis' },
       ],
     },
     // {
