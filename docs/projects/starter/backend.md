@@ -1,15 +1,30 @@
 # Backend
 
+## Процесс разработки новых методов/изменения существующего функционала
+
+TDD:
+
+1. формулируем необходимые изменения в документации проекта
+2. вносим изменения в openapi.yml
+3. вносим изменения в примеры запросов и ответов
+4. вносим изменения в тесты методов/добавляем новые тесты
+5. вносим изменения в логику проекта
+6. проверяем что тесты проходят
+7. добавляем изменения в проект
+
+## Документация
+
+Методы, которые поддерживает сервис описаны в `/docs/openapi.yml`. Эта документация содержит схемы запросов и ответов, а также
+примеры запросов и ответов.
+
+## Тестирование
+
+В проекте используются автотесты. Каждый метод должен быть покрыт тестами, которые учитывают все сценарии использования данного
+метода.
+
+При написании тестов используются те же примеры запросов и ответов, которые используются для документирования методов
+
 ## Структура проекта
-
-Ориентировался на проекты:
-+ https://github.com/golang-standards/project-layout
-+ https://github.com/evrone/go-clean-template
-+ https://github.com/bxcodec/go-clean-arch
-+ https://github.com/Creatly/creatly-backend
-
-
-![backend-clean-arch](./backend-clean-arch.png)
 
 ### `/internal/repository/sqlite/migrations`
 
@@ -45,6 +60,14 @@
 
 Бизнес логика приложения
 
+Ориентировался на проекты:
++ https://github.com/golang-standards/project-layout
++ https://github.com/evrone/go-clean-template
++ https://github.com/bxcodec/go-clean-arch
++ https://github.com/Creatly/creatly-backend
+
+![backend-clean-arch](./backend-clean-arch.png)
+
 ## Форматы http запроса и ответа
 
 Тело запроса:
@@ -74,6 +97,7 @@
 ```json
 {
 	"success": false,
+	"data": {},
 	"error": {
 		"code": "",
 		"description": "",
