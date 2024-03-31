@@ -64,7 +64,10 @@ function getSidebar() {
     },
     // {
     //   text: 'Инструменты',
-    //   items: [{ text: 'Sentry', link: '/tools/sentry' }],
+    //   items: [
+    //     // { text: 'Sentry', link: '/tools/sentry' },
+    //     { text: 'Kafka', link: '/tools/kafka' },
+    //   ],
     // },
     {
       text: 'Соглашения',
@@ -105,24 +108,24 @@ function getSidebar() {
     //     },
     //   ],
     // },
-    {
-      text: 'Database',
-      items: [
-        {
-          text: 'Postgres',
-          items: [
-            {
-              text: 'Docker',
-              link: '/database/postgres/docker',
-            },
-            {
-              text: 'CLI',
-              link: '/database/postgres/terminal',
-            },
-          ],
-        },
-      ],
-    },
+    // {
+    //   text: 'Database',
+    //   items: [
+    //     {
+    //       text: 'Postgres',
+    //       items: [
+    //         {
+    //           text: 'Docker',
+    //           link: '/database/postgres/docker',
+    //         },
+    //         {
+    //           text: 'CLI',
+    //           link: '/database/postgres/terminal',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       text: 'CI/CD',
       items: [
@@ -133,29 +136,29 @@ function getSidebar() {
         { text: 'Github Actions', link: '/ci-cd/github-actions' },
       ],
     },
-    {
-      text: 'Testing',
-      items: [
-        {
-          text: 'Frontend',
-          items: [
-            {
-              text: 'Подходы к тестированию',
-              link: '/testing/frontend/methods',
-            },
-          ],
-        },
-        // {
-        //   text: 'Security',
-        //   items: [
-        //     {
-        //       text: 'Roadmap',
-        //       link: '/testing/security/roadmap',
-        //     },
-        //   ],
-        // },
-      ],
-    },
+    // {
+    //   text: 'Testing',
+    //   items: [
+    //     {
+    //       text: 'Frontend',
+    //       items: [
+    //         {
+    //           text: 'Подходы к тестированию',
+    //           link: '/testing/frontend/methods',
+    //         },
+    //       ],
+    //     },
+    //     // {
+    //     //   text: 'Security',
+    //     //   items: [
+    //     //     {
+    //     //       text: 'Roadmap',
+    //     //       link: '/testing/security/roadmap',
+    //     //     },
+    //     //   ],
+    //     // },
+    //   ],
+    // },
     // {
     //   text: 'Design',
     //   items: [

@@ -7,7 +7,7 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "build:gh-pages": "vitepress build docs base=/docs/",
-    "serve": "vitepress serve docs"
+    "preview": "vitepress serve docs"
   },
   "keywords": [],
   "author": "",
