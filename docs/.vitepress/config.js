@@ -62,13 +62,13 @@ function getSidebar() {
         },
       ],
     },
-    // {
-    //   text: 'Инструменты',
-    //   items: [
-    //     // { text: 'Sentry', link: '/tools/sentry' },
-    //     { text: 'Kafka', link: '/tools/kafka' },
-    //   ],
-    // },
+    {
+      text: 'Инструменты',
+      items: [
+        // { text: 'Sentry', link: '/tools/sentry' },
+        { text: 'Kafka', link: '/tools/kafka' },
+      ],
+    },
     {
       text: 'Соглашения',
       items: [{ text: 'Git', link: '/agreements/git' }],
