@@ -73,21 +73,29 @@ function getSidebar() {
       text: 'Соглашения',
       items: [{ text: 'Git', link: '/agreements/git' }],
     },
+    {
+      text: 'Изучение ЯП',
+      items: [
+        { text: 'Типы данных', link: '/pl/data-types' },
+        { text: 'Переменные', link: '/pl/variables' },
+        { text: 'Функции', link: '/pl/functions' },
+        {
+          text: 'Операции',
+          items: [{ text: 'Числа', link: '/pl/operations/numbers' }],
+        },
+      ],
+    },
     // {
     //   text: 'Архитектура',
     //   items: [{ text: 'System design', link: '/architecture/system-design' }],
     // },
-    {
-      text: 'Product',
-      items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
-    },
     {
       text: 'Frontend',
       items: [
         { text: 'Груминг', link: '/frontend/grooming' },
         { text: 'Создание документации', link: '/frontend/documentation' },
         {
-          text: 'Quassar',
+          text: 'Quasar',
           items: [
             {
               text: 'Разработка под android',
@@ -190,5 +198,9 @@ function getSidebar() {
     //     },
     //   ],
     // },
+    {
+      text: 'Product',
+      items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
+    },
   ];
 }

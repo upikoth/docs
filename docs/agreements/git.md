@@ -2,13 +2,7 @@
 
 Соглашения по именованию веток и коммитов
 
-## Основные ветки
-
-+ main
-
 ## Именование веток
-
-[Статейка, откуда брал информацию](https://dev.to/varbsan/a-simplified-convention-for-naming-branches-and-commits-in-git-il4)
 
 category/reference/description
 
@@ -27,9 +21,9 @@ description: короткое описание issue
 
 Пример: feature/issue-1/add-deploy-gh-pages
 
-## Именование коммитов
+[Статья, откуда брал информацию](https://dev.to/varbsan/a-simplified-convention-for-naming-branches-and-commits-in-git-il4)
 
-[conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+## Именование коммитов
 
 category(reference): message
 
@@ -48,3 +42,9 @@ reference:
 message: сообщение коммита
 
 Пример: chore(issue-1): Добавлен деплой на gh pages
+
+[conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+
+## Основные постоянные ветки
+
++ main
