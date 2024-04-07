@@ -1,5 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "assignees": ["upikoth"]
+  "assignees": ["upikoth"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "updateTypes": ["lockFileMaintenance"],
+      "lockFileMaintenance": true
+    }
+  ]
 }
