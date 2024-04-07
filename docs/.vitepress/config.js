@@ -69,6 +69,7 @@ function getSidebar() {
         { text: 'Vscode', link: '/tools/vscode' },
         // { text: 'Sentry', link: '/tools/sentry' },
         { text: 'Kafka', link: '/tools/kafka' },
+        { text: 'Renovate', link: '/tools/renovate' },
       ],
     },
     {
