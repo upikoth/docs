@@ -65,6 +65,8 @@ function getSidebar() {
     {
       text: 'Инструменты',
       items: [
+        { text: 'Терминал', link: '/tools/terminal' },
+        { text: 'Vscode', link: '/tools/vscode' },
         // { text: 'Sentry', link: '/tools/sentry' },
         { text: 'Kafka', link: '/tools/kafka' },
       ],
