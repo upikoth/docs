@@ -14,6 +14,11 @@
 2. Много звезд на github, хорошая поддержка
 3. Этот инструмент используется во многих известных проектах. Например vuejs
 
+## Renovate локально для проверки конфига
+
+1. `npm install -g renovate`
+2. Перейти в репозиторий, запустить команду `RENOVATE_CONFIG_FILE=renovate.json renovate`
+
 ## Renovate на github
 
 1. Устанавливаем https://github.com/apps/renovate
