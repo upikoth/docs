@@ -14,7 +14,7 @@ RUN npm run build
 
 # Stage 2.
 
-FROM nginx:1.25-alpine-slim
+FROM nginx:1.26-alpine-slim
 
 COPY --from=build /documentation/docs/.vitepress/dist/ /usr/share/nginx/html/
 
