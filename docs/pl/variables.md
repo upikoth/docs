@@ -18,6 +18,7 @@ let/const - блочная область видимости
 2. foo := 1;
 3. foo := new(int); - new возвращает указатель на выделенный блок памяти
 4. const foo = 1;
+5. foo := make([]string, 5) - создает slice заданной длины
 
 ### Postgresql
 

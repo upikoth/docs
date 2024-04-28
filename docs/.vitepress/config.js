@@ -84,7 +84,10 @@ function getSidebar() {
         { text: 'Функции', link: '/pl/functions' },
         {
           text: 'Операции',
-          items: [{ text: 'Числа', link: '/pl/operations/numbers' }],
+          items: [
+            { text: 'Числа', link: '/pl/operations/numbers' },
+            { text: 'Строки', link: '/pl/operations/strings' },
+          ],
         },
       ],
     },
