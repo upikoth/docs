@@ -5,12 +5,6 @@ on:
     branches:
       - main
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  CONTAINER_NAME: docs
-  APP_PORT: 4000
-
 jobs:
   deploy-to-github-pages:
     name: Build and deploy to Github Pages
@@ -50,57 +44,42 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/.vitepress/dist
 
-  build-and-push-image:
+  deploy-to-s3:
+    name: Build and deploy to s3
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Log in to the Container registry
-        uses: docker/login-action@v3
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 20
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v5
+      - name: Cache npm dependencies
+        id: cache-npm
+        uses: actions/cache@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: type=raw,value=latest
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - uses: MrMeison/yc-object-storage-action@v1
         with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-
-  deploy-to-server:
-    needs: build-and-push-image
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: executing remote ssh commands
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          port: ${{ secrets.SSH_PORT }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-            docker ps -f name=${{ env.CONTAINER_NAME }} -a -q | grep . && docker stop $(docker ps -f name=${{ env.CONTAINER_NAME }} -a -q)
-            docker ps -f name=${{ env.CONTAINER_NAME }} -a -q | grep . && docker rm $(docker ps -f name=${{ env.CONTAINER_NAME }} -a -q)
-            docker run \
-              --name ${{ env.CONTAINER_NAME }} \
-              -d \
-              -p 127.0.0.1:${{ env.APP_PORT }}:80 \
-              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-            docker system prune -f
+          accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
+          secretAccessKey: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          bucketName: ${{ secrets.S3_BUCKET_NAME }}
+          sourceDir: ./docs/.vitepress/dist
+          clear: true
