@@ -54,6 +54,7 @@ jobs:
           path: ./docs/.vitepress/dist
 
   deploy-to-github-pages:
+    needs: build
     name: Deploy to Github Pages
     runs-on: ubuntu-latest
     steps:
@@ -70,6 +71,7 @@ jobs:
           publish_dir: ./dist
 
   deploy-to-s3:
+    needs: build
     name: Build and deploy to s3
     runs-on: ubuntu-latest
     steps:
