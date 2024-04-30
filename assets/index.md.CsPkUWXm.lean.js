@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a1 as r}from"./chunks/framework.CSxuwOm8.js";const f=JSON.parse('{"title":"Документация","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),o={name:"index.md"},i=r("",6),l=[i];function s(n,c,d,_,h,p){return t(),a("div",null,l)}const u=e(o,[["render",s]]);export{f as __pageData,u as default};
