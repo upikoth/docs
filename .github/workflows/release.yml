@@ -1,4 +1,4 @@
-name: Build and deploy
+name: Release
 
 on:
   push:
@@ -72,7 +72,7 @@ jobs:
 
   deploy-to-s3:
     needs: build
-    name: Build and deploy to s3
+    name: Deploy to s3
     runs-on: ubuntu-latest
     steps:
       - name: Download build
