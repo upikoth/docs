@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  deploy-to-github-pages:
-    name: Build and deploy to Github Pages
+  build:
+    name: Build docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,51 +35,54 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build to github pages
         run: npm run build:gh-pages
+
+      - name: Archive build to github pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-to-gh-pages
+          path: ./docs/.vitepress/dist
+
+      - name: Build
+        run: npm run build
+
+      - name: Archive build
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: ./docs/.vitepress/dist
+
+  deploy-to-github-pages:
+    name: Deploy to Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-to-gh-pages
+          path: ./dist
 
       - name: Deploy Github Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/.vitepress/dist
+          publish_dir: ./dist
 
   deploy-to-s3:
     name: Build and deploy to s3
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup node
-        uses: actions/setup-node@v4
+      - name: Download build
+        uses: actions/download-artifact@v4
         with:
-          node-version: 20
-
-      - name: Cache npm dependencies
-        id: cache-npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
-
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
+          name: build
+          path: ./dist
 
       - uses: MrMeison/yc-object-storage-action@v1
         with:
           accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
           secretAccessKey: ${{ secrets.S3_SECRET_ACCESS_KEY }}
           bucketName: ${{ secrets.S3_BUCKET_NAME }}
-          sourceDir: ./docs/.vitepress/dist
+          sourceDir: ./dist
           clear: true
