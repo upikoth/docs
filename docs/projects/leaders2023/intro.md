@@ -36,7 +36,7 @@
 
 + Frontend: Vue3 + Ionic
 + Backend: Go + Postgres
-+ CI/CD: Github CI + Docker
++ CI/CD: Github CI + Docker + SberCloud
 
 ## Task manager
 
