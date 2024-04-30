@@ -1,3 +1,3 @@
 # Documentation
 
-[![Build and deploy](https://github.com/upikoth/docs/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/upikoth/docs/actions/workflows/build-and-deploy.yml)
+[![Release](https://github.com/upikoth/docs/actions/workflows/release.yml/badge.svg)](https://github.com/upikoth/docs/actions/workflows/release.yml)
