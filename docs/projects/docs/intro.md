@@ -13,6 +13,7 @@
 
 - На этом проекте впервые использовал инструмент [renovate](/tools/renovate.md)
 - Настроил уведомления в telegram бота в github actions, когда workflow выполнился с ошибками
+- Настроил мониторинг и алертинг что сайт доступен, ориентируясь на http code
 
 ## Ссылки на репозитории
 
@@ -26,3 +27,8 @@
 ## Инструменты
 
 - https://metrika.yandex.ru/overview?id=96194575
+
+## Мониторинги
+
+- https://upikoth.grafana.net/a/grafana-synthetic-monitoring-app/checks/21071/dashboard
+- https://upikoth.grafana.net/alerting/grafana/adkdp24n9k2rkd/view?tab=query
