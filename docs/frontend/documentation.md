@@ -76,10 +76,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
@@ -110,7 +110,7 @@ github action создаст ветку gh-pages, в которой будет �
 3. Создаем .gitlab-ci.yml
 
 ```yaml
-image: node:14.19.0
+image: node:20.12.2
 
 pages:
   cache:

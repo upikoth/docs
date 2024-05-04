@@ -102,7 +102,8 @@ function getSidebar() {
     {
       text: 'Frontend',
       items: [
-        { text: 'Груминг', link: '/frontend/grooming' },
+        { text: 'Анализ бандла', link: '/frontend/bundle-analysis' },
+        // { text: 'Груминг', link: '/frontend/grooming' },
         { text: 'Создание документации', link: '/frontend/documentation' },
         {
           text: 'Quasar',
@@ -114,7 +115,6 @@ function getSidebar() {
           ],
         },
         // { text: 'Собеседование', link: '/frontend/interview' },
-        { text: 'Анализ бандла', link: '/frontend/bundle-analysis' },
       ],
     },
     // {
@@ -148,11 +148,11 @@ function getSidebar() {
       text: 'CI/CD',
       items: [
         { text: 'Статический сайт', link: '/ci-cd/static-site' },
-        { text: 'Настройка сервера', link: '/ci-cd/server' },
+        { text: 'Github Actions', link: '/ci-cd/github-actions' },
         { text: 'Docker', link: '/ci-cd/docker' },
+        { text: 'Настройка сервера', link: '/ci-cd/server' },
         { text: 'Nginx', link: '/ci-cd/nginx' },
         { text: 'SSL сертификат', link: '/ci-cd/ssl' },
-        { text: 'Github Actions', link: '/ci-cd/github-actions' },
       ],
     },
     // {
@@ -209,9 +209,9 @@ function getSidebar() {
     //     },
     //   ],
     // },
-    {
-      text: 'Product',
-      items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
-    },
+    // {
+    //   text: 'Product',
+    //   items: [{ text: 'Шаги создания приложения', link: '/product/steps' }],
+    // },
   ];
 }
