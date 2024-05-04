@@ -22,7 +22,7 @@
 ## Стек
 
 + Frontend: Vitepress
-+ CI/CD: Github CI + Yandex Cloud (Object Storage + DNS + Certificate Manager)
++ CI/CD: Github CI + [Yandex Cloud (Object Storage + DNS + Certificate Manager)](/ci-cd/static-site.md)
 
 ## Инструменты
 

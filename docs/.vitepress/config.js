@@ -147,6 +147,7 @@ function getSidebar() {
     {
       text: 'CI/CD',
       items: [
+        { text: 'Статический сайт', link: '/ci-cd/static-site' },
         { text: 'Настройка сервера', link: '/ci-cd/server' },
         { text: 'Docker', link: '/ci-cd/docker' },
         { text: 'Nginx', link: '/ci-cd/nginx' },
