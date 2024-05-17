@@ -74,6 +74,19 @@ function getSidebar() {
         // { text: 'Sentry', link: '/tools/sentry' },
         { text: 'Kafka', link: '/tools/kafka' },
         { text: 'Renovate', link: '/tools/renovate' },
+        {
+          text: 'Yandex Cloud',
+          items: [
+            // {
+            //   text: 'CLI',
+            //   link: '/tools/yandex-cloud/cli',
+            // },
+            {
+              text: 'Статический сайт',
+              link: '/tools/yandex-cloud/static-site',
+            },
+          ],
+        },
       ],
     },
     {
@@ -147,7 +160,6 @@ function getSidebar() {
     {
       text: 'CI/CD',
       items: [
-        { text: 'Статический сайт', link: '/ci-cd/static-site' },
         { text: 'Github Actions', link: '/ci-cd/github-actions' },
         { text: 'Docker', link: '/ci-cd/docker' },
         { text: 'Настройка сервера', link: '/ci-cd/server' },
