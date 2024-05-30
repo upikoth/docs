@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a1 as n}from"./chunks/framework.B5mX7_2E.js";const g=JSON.parse('{"title":"SSL","description":"","frontmatter":{},"headers":[],"relativePath":"ci-cd/ssl.md","filePath":"ci-cd/ssl.md"}'),t={name:"ci-cd/ssl.md"},e=n("",3),l=[e];function p(h,k,d,r,c,o){return a(),i("div",null,l)}const _=s(t,[["render",p]]);export{g as __pageData,_ as default};
