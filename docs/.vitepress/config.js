@@ -122,45 +122,39 @@ function getSidebar() {
 				{ text: 'Анализ бандла', link: '/frontend/bundle-analysis' },
 				// { text: 'Груминг', link: '/frontend/grooming' },
 				{ text: 'Создание документации', link: '/frontend/documentation' },
-				{
-					text: 'Quasar',
-					items: [
-						{
-							text: 'Разработка под android',
-							link: '/frontend/quasar/android',
-						},
-					],
-				},
+				// {
+				// 	text: 'Quasar',
+				// 	items: [
+				// 		{
+				// 			text: 'Разработка под android',
+				// 			link: '/frontend/quasar/android',
+				// 		},
+				// 	],
+				// },
 				// { text: 'Собеседование', link: '/frontend/interview' },
 			],
 		},
-		// {
-		//   text: 'Backend',
-		//   items: [
-		//     {
-		//       text: 'Go',
-		//       link: '/backend/go',
-		//     },
-		//   ],
-		// },
-		// {
-		//   text: 'Database',
-		//   items: [
-		//     {
-		//       text: 'Postgres',
-		//       items: [
-		//         {
-		//           text: 'Docker',
-		//           link: '/database/postgres/docker',
-		//         },
-		//         {
-		//           text: 'CLI',
-		//           link: '/database/postgres/terminal',
-		//         },
-		//       ],
-		//     },
-		//   ],
-		// },
+		{
+			text: 'Backend',
+			items: [
+				{ text: 'Как найти утечки памяти, понять что расходует CPU', link: '/backend/memory-leak-cpu-consumption' },
+			],
+		},
+		{
+			text: 'Database',
+			items: [
+				{
+					text: 'Postgres',
+					items: [
+						{
+							text: 'Запуск в docker',
+							link: '/database/postgres/docker',
+						},
+					],
+				},
+				// { text: 'Анализ запроса к БД', link: '/database/query-analysis' },
+			],
+		},
 		{
 			text: 'CI/CD',
 			items: [

@@ -1,13 +1,9 @@
-# Postgres в Docker
-
-## Docker
+# Запуск в docker
 
 ```shell
 # Скачиваем образ.
 docker pull postgres:15
 ```
-
-## Docker Compose
 
 ```yaml
 services:
