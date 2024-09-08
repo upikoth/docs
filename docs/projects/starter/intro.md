@@ -1,6 +1,35 @@
+<script setup>
+import Mermaid from '../../.vitepress/components/mermaid.vue'
+</script>
+
 # Starter
 
 Цель проекта: создать набор проектов, на основе которых можно будет быстро инициализировать новый проект и сразу начать разработку бизнес логики, а не заниматься настройками окружения.
+
+## Архитектура
+
+<mermaid>
+	<pre class='.mermaid'>
+		architecture-beta
+			group internet(internet)[Browser]
+			group api(cloud)[Yandex Cloud]
+			group observability(cloud)[Observability]
+			service frontend_app(internet)[Frontend App] in internet
+			service gateway(internet)[Gateway] in api
+			service backend_app(server)[Backend App] in api
+			service ydb(database)[YDB] in api
+			service ycp(server)[Cloud Postbox] in api
+			service s3(database)[Object Storage] in api
+			service sentry(server)[Sentry] in observability
+			frontend_app:R -- L:gateway
+			frontend_app:T -- B:sentry
+			gateway:R -- L:backend_app
+			backend_app:R -- L:ydb
+			backend_app:B -- T:ycp
+			backend_app:T -- B:s3
+			backend_app:T -- T:sentry
+	</pre>
+</mermaid>
 
 ## Превью
 
@@ -9,8 +38,8 @@
 ## Стек
 
 + Frontend: Vue3 + Quasar
-+ Backend: Bun + sqlite
-+ S3 - object storage service - cloud.ru
++ Backend: Go + Ydb
++ yandex.cloud: object storage (s3), cloud postbox, container registry, serverless containers
 
 ## Task manager
 
@@ -19,15 +48,8 @@
 ## Ссылки на репозитории
 
 - Frontend: https://github.com/upikoth/starter-vue3
-- Backend: https://github.com/upikoth/starter-bun
-
-## Логирование
-
-- (starter-bun): логи будут храниться в файлах, рядом с проектом. Также есть volume на сервер /var/www/logs/starter-bun
+- Backend: https://github.com/upikoth/starter-go
 
 ## Полезные ссылки по проекту
 
-+ [Sentry starter-vue3](https://upikoth.sentry.io/projects/starter-vue3/?project=4505991751598080)
-+ [Яндекс метрика](https://metrika.yandex.ru/dashboard?group=day&period=week&id=96194800)
-+ [Grafana с информацией о хосте, на котором запущен проект](https://upikoth.grafana.net/d/nodes/main-server-overview)
-+ [Grafana с информацией о docker контейнерах](https://upikoth.grafana.net/d/integration-docker-overview/main-docker-overview)
++ [Sentry starter](https://upikoth.sentry.io/projects/starter-vue3/?project=4505991751598080)
