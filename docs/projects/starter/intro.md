@@ -21,9 +21,12 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 			service ycp(server)[Cloud Postbox] in api
 			service s3(database)[Object Storage] in api
 			service sentry(server)[Sentry] in observability
+			service smart_web_security(server)[Smart Web Security] in api
 			frontend_app:R -- L:gateway
 			frontend_app:T -- B:sentry
 			gateway:R -- L:backend_app
+			gateway:T -- B:s3
+			gateway:B -- T:smart_web_security
 			backend_app:R -- L:ydb
 			backend_app:B -- T:ycp
 			backend_app:T -- B:s3
@@ -53,3 +56,4 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 ## Полезные ссылки по проекту
 
 + [Sentry starter](https://upikoth.sentry.io/projects/starter-vue3/?project=4505991751598080)
++ [Swagger](https://starter.upikoth.dev/api/docs/app)
