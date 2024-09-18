@@ -138,6 +138,7 @@ function getSidebar() {
 			text: 'Backend',
 			items: [
 				{ text: 'Как найти утечки памяти, понять что расходует CPU', link: '/backend/memory-leak-cpu-consumption' },
+				{ text: 'Конкурентность и параллелизм', link: '/backend/concurrency-parallelism' },
 			],
 		},
 		{
