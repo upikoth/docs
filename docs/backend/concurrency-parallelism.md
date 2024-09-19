@@ -3,6 +3,7 @@
 ## Процессы и потоки в ОС
 
 Физическое ядро ОС - выполняет операции. Несколько ядер могут выполнять инструкции параллельно
+
 Логические ядра ОС - абстракция, которая позволяет разделить ресурсы физического ядра. Псевдопараллельно выполняет инструкции на физическом ядре
 
 Процесс ОС - экземпляр программы, которая выполняется
@@ -50,3 +51,96 @@
 - возможность использования каналов вместо мьютексов
 
 Самое главное в параллелизме это чтобы время на переключение контекста оправдывало себя. Если у нас сложная вычислительная операция, которую нельзя выполнить асинхронно, то переключение контекста в данном случае будет неэффективно.
+
+## Стандартные пакеты для реализации параллельных и конкурентных вычислений
+
+### sync/atomic
+
+Позволяет выполнять атомарные операции над простыми переменными
+
+Реализуется на ассемблере
+
+выполняется за один шаг на процессоре, поэтому:
+- нет состояния гонки
+- нет блокировки
+- работает быстрее и оптимальнее чем sync.Mutex
+
+## Примеры
+
+1. Какое количество горутин будет оптимальным для сложения двух массивов чисел размером 100_000_000?
+
+Зависит от компьютера, на котором запущена программа. При увеличении числа горутин начинает тратится время на создание горутин и переключение контекста. 
+
+Увеличение значения GOMAXPROCS не оказало значительного влияния на время выполнения.
+
+Пример кода:
+
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"runtime"
+	"sync"
+	"time"
+)
+
+const len = 100_000_000
+
+const computeCount = 100
+const numberOfGoroutines = 10
+
+func main() {
+	runtime.GOMAXPROCS(10)
+
+	arr1, arr2 := initArr()
+
+	startsAt := time.Now()
+
+	for i := 0; i < computeCount; i++ {
+		compute(arr1, arr2, numberOfGoroutines)
+	}
+
+	fmt.Println("Число элементов в массиве:", len)
+	fmt.Println("Число горутин:", numberOfGoroutines)
+	fmt.Println("Число запусков сложения массивов:", computeCount)
+	fmt.Println("Время выполнения сложения массивов:", time.Since(startsAt))
+	fmt.Println("GOMAXPROCS:", runtime.GOMAXPROCS(0))
+}
+
+func initArr() (*[len]int, *[len]int) {
+	arr1 := [len]int{}
+	arr2 := [len]int{}
+
+	for i := 0; i < len; i++ {
+		arr1[i] = rand.Int()
+		arr2[i] = rand.Int()
+	}
+
+	return &arr1, &arr2
+}
+
+func compute(arr1 *[len]int, arr2 *[len]int, numberOfGoroutines int) *[len]int {
+	res := [len]int{}
+	batchSize := len / numberOfGoroutines
+
+	wg := sync.WaitGroup{}
+
+	for i := 0; i < numberOfGoroutines; i++ {
+		wg.Add(1)
+
+		go func(batchIndex int) {
+			defer wg.Done()
+
+			for j := batchSize * batchIndex; j < batchSize*(batchIndex+1); j++ {
+				res[j] = arr1[j] + arr2[j]
+			}
+		}(i)
+	}
+
+	wg.Wait()
+
+	return &res
+}
+```
