@@ -26,6 +26,12 @@
 // Конкатенация.
 "hello " + "world"
 
+// Или используя builder. Нужен при многократном сложении строк.
+b := strings.Builder{}
+b.WriteString("hello")
+b.WriteString("world")
+b.String()
+
 // Получение длины строки.
 len("foo")
 
@@ -39,6 +45,14 @@ strings.Join(arr, "delimiter")
 // Преобразование к верхнему/нижнему регистру.
 strings.ToUpper("foo")
 strings.ToLower("foo")
+
+// Количество символов (rune) в строке.
+utf8.RuneCountInString("foo")
+
+// Количество байт в строке.
+len("foo")
+
+string
 ```
 
 ## Postgresql
