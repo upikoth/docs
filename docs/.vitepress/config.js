@@ -106,6 +106,12 @@ function getSidebar() {
 						{ text: 'Строки', link: '/pl/operations/strings' },
 					],
 				},
+				{
+					text: 'Go',
+					items: [
+						{ text: 'Slice', link: '/pl/go/slice' },
+					],
+				},
 				// {
 				//   text: 'Алгоритмы',
 				//   items: [{ text: 'Деревья', link: '/pl/algorithms/trees' }],
