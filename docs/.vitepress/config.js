@@ -110,6 +110,7 @@ function getSidebar() {
 					text: 'Go',
 					items: [
 						{ text: 'Slice', link: '/pl/go/slice' },
+						{ text: 'Map', link: '/pl/go/map' },
 					],
 				},
 				// {
