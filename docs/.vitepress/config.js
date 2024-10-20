@@ -1,5 +1,5 @@
 const base =
-	process.argv.find((el) => el.startsWith('base='))?.replace(/^base=/, '') ||
+	process.argv.find((el) => el.startsWith('base='))?.relearningace(/^base=/, '') ||
 	'/';
 
 module.exports = {
@@ -94,29 +94,31 @@ function getSidebar() {
 			items: [{ text: 'Git', link: '/agreements/git' }],
 		},
 		{
-			text: 'Изучение ЯП',
+			text: 'Изучение',
 			items: [
-				{ text: 'Типы данных', link: '/pl/data-types' },
-				{ text: 'Переменные', link: '/pl/variables' },
-				{ text: 'Функции', link: '/pl/functions' },
+				{ text: 'Типы данных', link: '/learning/data-types' },
+				{ text: 'Переменные', link: '/learning/variables' },
+				{ text: 'Функции', link: '/learning/functions' },
 				{
 					text: 'Операции',
 					items: [
-						{ text: 'Числа', link: '/pl/operations/numbers' },
-						{ text: 'Строки', link: '/pl/operations/strings' },
+						{ text: 'Числа', link: '/learning/operations/numbers' },
+						{ text: 'Строки', link: '/learning/operations/strings' },
 					],
 				},
 				{
 					text: 'Go',
 					items: [
-						{ text: 'Slice', link: '/pl/go/slice' },
-						{ text: 'Map', link: '/pl/go/map' },
+						{ text: 'Slice', link: '/learning/go/slice' },
+						{ text: 'Map', link: '/learning/go/map' },
 					],
 				},
-				// {
-				//   text: 'Алгоритмы',
-				//   items: [{ text: 'Деревья', link: '/pl/algorithms/trees' }],
-				// },
+				{
+					text: 'БД',
+					items: [
+						{ text: 'Транзакции', link: '/learning/db/transactions' },
+					],
+				},
 			],
 		},
 		// {
@@ -223,7 +225,7 @@ function getSidebar() {
 		//     },
 		//     {
 		//       text: 'Планирование',
-		//       link: '/other/planning',
+		//       link: '/other/learninganning',
 		//     },
 		//   ],
 		// },

@@ -1,11 +1,7 @@
 # Как стартовать новый проект на основе Starter
 
-```sh
-mkdir o-hack
-cd o-hack
-```
+Для быстрого старта можно использовать проект https://github.com/upikoth/starter-new
 
-```sh
-go install golang.org/x/tools/cmd/gonew@latest
-gonew github.com/upikoth/starter-go github.com/upikoth/o-hack-go
-```
+Он автоматически создаст новые репозитории в github на основе имеющихся и настроит инфраструктуру в yandex cloud под новый проект.
+
+Полученные данные будут установлены в env переменные как локально, так и в репозиториях github.

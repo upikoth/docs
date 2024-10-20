@@ -52,6 +52,7 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 
 - Frontend: https://github.com/upikoth/starter-vue3
 - Backend: https://github.com/upikoth/starter-go
+- Репозиторий для быстрого старта нового приложения: https://github.com/upikoth/starter-new
 
 ## Полезные ссылки по проекту
 

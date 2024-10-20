@@ -37,7 +37,3 @@ import Mermaid from '../../.vitepress/components/mermaid.vue'
 			}
 	</pre>
 </mermaid>
-
-## S3
-
-Помимо БД используется s3 для хранения файлов
