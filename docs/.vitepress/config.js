@@ -1,5 +1,5 @@
 const base =
-	process.argv.find((el) => el.startsWith('base='))?.relearningace(/^base=/, '') ||
+	process.argv.find((el) => el.startsWith('base='))?.replace(/^base=/, '') ||
 	'/';
 
 module.exports = {
