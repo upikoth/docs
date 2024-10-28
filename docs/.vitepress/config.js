@@ -112,6 +112,7 @@ function getSidebar() {
 						{ text: 'Slice', link: '/learning/go/slice' },
 						{ text: 'Map', link: '/learning/go/map' },
 						{ text: 'Package reflect', link: '/learning/go/reflect' },
+						{ text: 'Package unsafe', link: '/learning/go/unsafe' },
 					],
 				},
 				{
