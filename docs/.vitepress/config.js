@@ -113,6 +113,7 @@ function getSidebar() {
 						{ text: 'Map', link: '/learning/go/map' },
 						{ text: 'Package reflect', link: '/learning/go/reflect' },
 						{ text: 'Package unsafe', link: '/learning/go/unsafe' },
+						// { text: 'Package context', link: '/learning/go/context' },
 					],
 				},
 				{
@@ -177,29 +178,29 @@ function getSidebar() {
 				{ text: 'SSL сертификат', link: '/ci-cd/ssl' },
 			],
 		},
-		// {
-		//   text: 'Testing',
-		//   items: [
-		//     {
-		//       text: 'Frontend',
-		//       items: [
-		//         {
-		//           text: 'Подходы к тестированию',
-		//           link: '/testing/frontend/methods',
-		//         },
-		//       ],
-		//     },
-		//     // {
-		//     //   text: 'Security',
-		//     //   items: [
-		//     //     {
-		//     //       text: 'Roadmap',
-		//     //       link: '/testing/security/roadmap',
-		//     //     },
-		//     //   ],
-		//     // },
-		//   ],
-		// },
+		{
+		  text: 'Testing',
+		  items: [
+		    {
+		      text: 'Frontend',
+		      items: [
+		        {
+		          text: 'Подходы к тестированию',
+		          link: '/testing/frontend/methods',
+		        },
+		      ],
+		    },
+		    {
+		      text: 'Security',
+		      items: [
+		        {
+		          text: 'Info',
+		          link: '/testing/security/info',
+		        },
+		      ],
+		    },
+		  ],
+		},
 		// {
 		//   text: 'Design',
 		//   items: [
