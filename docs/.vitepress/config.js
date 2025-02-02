@@ -174,6 +174,7 @@ function getSidebar() {
 				{ text: 'Github Actions', link: '/ci-cd/github-actions' },
 				{ text: 'Docker', link: '/ci-cd/docker' },
 				{ text: 'Настройка сервера', link: '/ci-cd/server' },
+				{ text: 'Сервер на своей машинке', link: '/ci-cd/server-local' },
 				{ text: 'Nginx', link: '/ci-cd/nginx' },
 				{ text: 'SSL сертификат', link: '/ci-cd/ssl' },
 			],
