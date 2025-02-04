@@ -66,3 +66,108 @@ sudo reboot
 ```
 
 Если что-то пошло не так, shift при загрузке системы и заход под рутом должны помочь
+
+6. Устанавливаем k3s
+
+до этого пункта лучше установить vpn и указать ip из vpn в список, для которых генерируются сертификаты доступа к k3s
+
+```shell
+curl -sfL https://get.k3s.io | sh -
+
+sudo kubectl get nodes
+```
+
+7. Устанавливаем helm
+
+```shell
+sudo snap install helm --classic
+
+# копируем конфиг
+cp /etc/rancher/k3s/k3s.yaml ~/k3s/.k3s.yaml
+
+# добавляем в .profile, чтобы helm видел конфиг и на каком порту развернут кластер
+export KUBECONFIG=~/k3s/.k3s.yaml
+
+# добавил права, чтобы конфиг мог читать текущий пользователь и helm 
+sudo chmod 644 ~/k3s/.k3s.yaml
+sudo chown "user":"user" ~/k3s/.k3s.yaml
+
+helm list
+```
+
+8. Устанавливаем и настраиваем lens
+
+lens нужно установить не на сервере, а на клиенте.
+
+После того как lens установлен, нужно скопировать настройки k3s с сервера и добавить этот конфиг к клиенту.
+
+Далее внутри конфига дополнительно добавить ssh туннель. После включения туннеля, обращения к localhost:6443 будут
+проксироваться на 6443 порт сервера
+
+```yaml
+apiVersion: v1
+clusters:
+  - cluster:
+      certificate-authority-data: ---
+      server: https://127.0.0.1:6443
+    name: firebat
+contexts:
+  - context:
+      cluster: firebat
+      user: upikoth
+    name: firebat
+current-context: firebat
+kind: Config
+preferences: {}
+users:
+  - name: upikoth
+    user:
+      client-certificate-data: ---
+      client-key-data: ---
+      exec:
+        apiVersion: client.authentication.k8s.io/v1
+        command: ssh
+        args:
+          - -N
+          - -L
+          - 6443:localhost:6443
+          - firebatnet
+        interactiveMode: IfAvailable
+```
+
+Теперь при подключении lens к k3s будет создаваться туннель и по нему выполняться подключение. Внешние пользователи не 
+смогут подключиться.
+
+9. После чего решил установить openvpn, чтобы некоторые сервисы были доступны только под vpn.
+
+клиент:
+
+https://openvpn.net/client/
+
+сервер:
+
+https://github.com/Nyr/openvpn-install
+
+Понял, что ufw это надстройка над iptables. iptables имеет приоритет и k3s и openvpn настраивают напрямую iptables.
+Смотреть и изменять доступы лучше там
+
+Несколько команд в помощь
+
+```shell
+# правила
+sudo iptables --list | grep 80
+
+# слушатели и статусы
+ss -tuln
+
+#узнать какой процесс слушает 22 порт и если в правилах есть доступ, то к нему можно достучаться
+sudo ss -tulnp | grep :22
+```
+
+```shell
+# Разрешил всем в впн сети доступ ко всем портам
+sudo ufw allow from 10.8.0.0/24
+sudo ufw reload
+```
+
+openvpn сам прописал себе разрешение в iptables на указанном порту
