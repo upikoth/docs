@@ -148,14 +148,31 @@ https://openvpn.net/client/
 
 https://github.com/Nyr/openvpn-install
 
+```shell
+sudo systemctl restart openvpn-server@server
+
+sudo nano /etc/openvpn/server/server.conf
+
+sudo apt install dnsmasq
+
+sudo systemctl restart dnsmasq
+
+sudo nano /etc/dnsmasq.conf
+```
+
+убарл systemd-resolved, настроил dnsmasq
+
+в /etc/dnsmasq.conf прописал address=/grafana.lan/10.8.0.1, чтобы графана резолвилась на ip k3s
+далее k3s ingress подхватит и перекинет на нужный под
+
 Понял, что ufw это надстройка над iptables. iptables имеет приоритет и k3s и openvpn настраивают напрямую iptables.
-Смотреть и изменять доступы лучше там
+Смотреть и изменять доступы лучше там, но через nftables (nft)
 
 Несколько команд в помощь
 
 ```shell
 # правила
-sudo iptables --list | grep 80
+nft list ruleset | grep 80
 
 # слушатели и статусы
 ss -tuln
@@ -171,3 +188,8 @@ sudo ufw reload
 ```
 
 openvpn сам прописал себе разрешение в iptables на указанном порту
+
+10. Grafana
+
+Устанавливаем grafana из helm чартов
+Настраиваем ingress, чтобы по хосту grafana.net резолвил нашу графану
