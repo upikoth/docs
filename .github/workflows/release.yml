@@ -16,7 +16,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.20.2
 
       - name: Cache npm dependencies
         id: cache-npm
